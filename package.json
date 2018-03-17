@@ -1,0 +1,31 @@
+{
+  "name": "samaritan",
+  "version": "1.0.0",
+  "description": "HI THIS IS A GOOD PROJECT",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "autoprefixer": "^8.1.0",
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dock": "^0.2.4",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eveningmorning/capstone_samaritan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eveningmorning/capstone_samaritan/issues"
+  },
+  "homepage": "https://github.com/eveningmorning/capstone_samaritan#readme"
+}
