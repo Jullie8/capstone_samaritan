@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Getting started with chrome ext to activate on CNN",
+    "description": "This extension allows the user to change the background color of the current page.",
+    "version": "1.1",
+
+    "content_scripts": [
+        {
+          "matches": ["http://*.nytimes.com/*"],
+          "js": ["popup.js"]
+        }
+      ],
+  
+    "browser_action": {
+      "default_icon": "hand.png",
+      "default_popup": "popup.html",
+      "default_title": "Activate on CNN!"
+    },
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "storage"
+      // "https://www.cnn.com/",  "http://www.cnn.com/"
+    ]
+  }
+  
+
