@@ -7,7 +7,8 @@
 
     "content_scripts": [
         {
-          "matches": ["http://*.nytimes.com/*", "http://*.bloomberg.com/*"],
+          //there are more site to be added to matches 
+          "matches": ["http://*.bloomberg.com/*", "http://*.cnn.com/*","http://*.nytimes.com/*", "http://*.theguardian.com/*", "http://*.washingtonpost.com/*", "http://*.yahoo.com/news/*", "http://*.economist.com/*", "http://*.usatoday.com/*", "http://*.huffingtonpost.com/*" ],
           "css": ["styles.css"],
           "js": ["popup.js"]
         }
@@ -34,7 +35,7 @@
       "tabs",
       "activeTab",
       "storage"
-      // "https://www.cnn.com/",  "http://www.cnn.com/"
+
     ]
   }
   
