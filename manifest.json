@@ -16,12 +16,12 @@
 
       //Background pages is the parent extension and content scripts cannot modify the dom of background pgs
       "background": {
-        "scripts": ["background.js"],
+        "scripts": ["config.js", "background.js", "popup.js"],
         "persistent": false
       },
 
       "page_action": {
-        "default_icon" : "hand.png",
+        "default_icon" : "Samaritan_shirt.png",
         "default_popup": "popup.html",
         "default_title": "Only visible on nytimes.com"
     },
@@ -31,7 +31,8 @@
     "permissions": [
       "tabs",
       "activeTab",
-      "storage"
+      "storage",
+      "https://api.data.charitynavigator.org/"
 
     ]
   }

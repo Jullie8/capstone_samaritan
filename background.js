@@ -21,7 +21,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     else if (~tab.url.indexOf("https://www.cnn.com/" )) {
         chrome.pageAction.show(tabId);
     }
-
+    
 
     else if (~tab.url.indexOf("https://www.nytimes.com/")) {
         chrome.pageAction.show(tabId);
