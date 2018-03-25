@@ -21,7 +21,7 @@
       },
 
       "page_action": {
-        "default_icon" : "Samaritan_shirt.png",
+        "default_icon" : "hand.png",
         "default_popup": "popup.html",
         "default_title": "Only visible on nytimes.com"
     },
