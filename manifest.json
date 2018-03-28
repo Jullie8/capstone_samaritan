@@ -6,8 +6,7 @@
     "version": "1.1",
 
     "content_scripts": [
-        {
-          
+        {        
           "matches": ["http://*.bloomberg.com/*", "http://*.cnn.com/*","http://*.nytimes.com/*","http://*.washingtonpost.com/*", "http://*.yahoo.com/news/*", "http://*.economist.com/*", "http://*.usatoday.com/*", "http://*.huffingtonpost.com/*", "http://*.washingtonpost.com/*", "http://*.wsj.com/*", "http://*.reuters.com/*", "http://*.cnbc.com/*", "http://time.com/*", "http://*.latimes.com/*", "http://*.usnews.com/*", "http://thehill.com/*", "http://*.theatlantic.com/*", "http://*.newsweek.com/*", "http://*.thedailybeast.com/*","http://*.politico.com/*", "http://*.nationalgeographic.com/*", "http://abcnews.go.com/*", "http://*.nbcnews.com/*","http://*.businessinsider.com/*","http://*.vox.com/*","http://slate.com/*", "http://*.sciencedaily.com/*","http://*.theguardian.com/us*", "http://*.bbc.com/new*s","http://*.buzzfeed.com/news?*", "http://*.cbsnews.com/*"],
           "css": ["styles.css"],
           "js": ["popup.js", "watson.js", "app.js", "axios.js"]
@@ -16,7 +15,7 @@
 
       //Background pages is the parent extension and content scripts cannot modify the dom of background pgs
       "background": {
-        "scripts": ["axios.js", "config.js", "background.js", "popup.js"],
+        "scripts": ["axios.js", "config.js", "background.js"],
         "persistent": false
       },
 
