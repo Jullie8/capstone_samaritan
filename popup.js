@@ -30,14 +30,17 @@
 //   console.log(request.status)
 // }); 
 
-// function renderHTML(data) {
-//   var htmlString =  "";
-//     for (i = 0; i < data.length; i++) {
-//     htmlString += "<li>" + data[i].charityName + "</li>";
-// }
-// //list.innerHTML('beforeend', 'testing');
-// }
 
+//user preference
+newsCategories = [];
+
+currentCat = [];
+
+for (var i = 0; i < currentCat.length; i++) {
+  if (currentCat == 'pollution') {
+
+  }
+}
 
 axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=pollution&minRating=4&sort=RELEVANCE%3ADESC`)
   .then(function (response) {
@@ -47,3 +50,10 @@ axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIEN
     console.log(error);
   });
 
+function renderHTML(response) {
+  var htmlString =  "";
+    for (i = 0; i < response.length; i++) {
+    htmlString += "<li>" + response[i].charityName + "</li>";
+}
+list.innerHTML;
+}
