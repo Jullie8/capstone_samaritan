@@ -20,7 +20,7 @@
       },
 
       "page_action": {
-        "default_icon" : "hand.png",
+        "default_icon" : "icon.png",
         "default_popup": "popup.html",
         "default_title": "Samaritan"
     },
