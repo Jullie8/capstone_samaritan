@@ -52,26 +52,34 @@ var charityNavFunc = function (category_var) {
 
       console.log(charities);
 
-      //loop through the array
       for (var i = 0; i < charities.length; i++) {
-       
-        //  bind to unordered list by id
-        var displayCharityList = document.getElementById("charities_results"); 
-        
-        // create a new li
-        var newLI = document.createElement("li") 
-        console.log(newLI)
-        
-        // create a new content
-        var newContent = document.createTextNode(charities[i].name);
 
-        // append new content to the li
-        newLI.appendChild(newContent);
+        var charityList = document.getElementById("charities"); 
+        var charityDiv = document.createElement("div"); 
+        var nameDiv = document.createElement("div"); 
+        nameDiv.setAttribute("class", "name");
+        var missionDiv = document.createElement("div"); 
+        var buttonDiv = document.createElement("div"); 
 
-        //append newLI to the ul
-        displayCharityList.appendChild(newLI);
+        // we will display name, mission, button (with URL)
+        var charityName = document.createTextNode(charities[i].name);
 
-        //the above code only render the charity name thus far
+        var charityMission = document.createTextNode(charities[i].mission);
+        //
+        var charityButton = document.createElement('button');
+        //
+        // onclick open url in new tab
+        charityButton.onClick=`window.open(${charities[i].URL})`;
+
+        nameDiv.appendChild(charityName);
+        missionDiv.appendChild(charityMission);
+        buttonDiv.appendChild(charityButton);
+        charityDiv.appendChild(nameDiv);
+        charityDiv.appendChild(missionDiv);
+        charityDiv.appendChild(buttonDiv);
+
+        charityList.appendChild(charityDiv);
+
       }
  
 
