@@ -52,8 +52,21 @@ var charityNavFunc = function (category_var) {
 
       console.log(charities);
 
-      //loop through the array
-      for (var i = 0; i < charities.length; i++) {
+      axios.post('/db/charityInfo.sql', {
+        charityName: this.charityName.value,
+        mission: this.mission.value,
+        category: this.category.categoryName.value
+
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+        //loop through the array
+        for (var i = 0; i < charities.length; i++) {
        
         //  bind to unordered list by id
         var displayCharityList = document.getElementById("charities_results"); 
@@ -73,7 +86,6 @@ var charityNavFunc = function (category_var) {
 
         //the above code only render the charity name thus far
       }
- 
 
 
     })
