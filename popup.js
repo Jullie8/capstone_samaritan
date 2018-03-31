@@ -31,7 +31,23 @@ var charityNavFunc = function(category_var){
 
 axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=4&sort=RELEVANCE%3ADESC`)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
+
+  let charities = [];
+  
+  for(let i = 0; i < 5; i++){
+    charities.push({
+      name: response.data[i].charityName,
+      mission: response.data[i].mission,
+      category: response.data[i].category.categoryName,
+      cause: response.data[i].cause.causeName,
+      URL: response.data[i].organization.charityNavigatorURL
+    });
+  }
+    
+  console.log(charities);
+
+
   })
   .catch(function (error) {
     console.log(error);
