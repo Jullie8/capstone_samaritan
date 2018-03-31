@@ -35,7 +35,7 @@ var charityNavFunc = function (category_var) {
 
   axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=4&sort=RELEVANCE%3ADESC`)
     .then(function (response) {
-      console.log(response.data);
+      //console.log(response.data);
 
       let charities = [];
 
@@ -59,7 +59,9 @@ var charityNavFunc = function (category_var) {
         var nameDiv = document.createElement("div"); 
         nameDiv.setAttribute("class", "name");
         var missionDiv = document.createElement("div"); 
+        missionDiv.setAttribute("class", "mission");
         var buttonDiv = document.createElement("div"); 
+        buttonDiv.setAttribute("class", "button");
 
         // we will display name, mission, button (with URL)
         var charityName = document.createTextNode(charities[i].name);
@@ -81,8 +83,6 @@ var charityNavFunc = function (category_var) {
         charityList.appendChild(charityDiv);
 
       }
- 
-
 
     })
     .catch(function (error) {
