@@ -71,7 +71,8 @@ var charityNavFunc = function (category_var) {
         var charityButton = document.createElement('button');
         //
         // onclick open url in new tab
-        charityButton.onClick=`window.open(${charities[i].URL})`;
+        charityButton.onClick=`window.open(${charities[i].URL})`; 
+
 
         nameDiv.appendChild(charityName);
         missionDiv.appendChild(charityMission);

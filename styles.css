@@ -1,6 +1,10 @@
 body {
     margin: 10px;
-    white-space: nowrap;
+    white-space: wrap;
+    height: 489px;
+    width:489px;
+    position: relative;
+    vertical-align: middle
   }
  
   h1 {
