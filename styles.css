@@ -1,24 +1,51 @@
 body {
-    margin: 10px;
-    white-space: wrap;
-    height: 489px;
-    width:489px;
-    position: relative;
-    vertical-align: middle
-  }
- 
-  h1 {
-    font-size: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-  }
+  white-space: wrap;
+  /* height: 489px; */
+  width: 480px;
+  margin: 0px !important;
+  border: 2px solid #757575
+}
 
-  #container {
-    align-items: center;
-    /* display: flex; */
-    justify-content: space-between;
-    height: 400px;
-    width:300px;
+/* div where logo img and content are held */
 
-  }
+#logo,
+h1 {
+  display: inline-flex;
+  width: 500px;
+  
+}
+#logo{
+  background-color:black;
+  color:whitesmoke
+}
 
+img {
+  height: 50px
+}
+
+/* all divs */
+div {
+  justify-content: center;
+}
+
+/* main div that holds name, mission and button divs */
+.charity {
+  padding: 10px;
+  /* border: 2px solid #00a1b5; */
+}
+
+/* button element */
+button{
+  background-color: black;
+  color:whitesmoke;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+
+/* TO DO: include a hover on the button -> a hand hover */
+/* TO DO: Include a footer at the button with the color of our logo that is position: fixed to the popup bottom */
+/* TO DO: Borders */
+/* TO DO: Styling the Charity Name -> BOLD*/
+/* TO DO: The mission is to long condense to specific # see emoji proj ...(see more) ie */
