@@ -28,7 +28,6 @@ var watsonCallFunc = function (url_var) {
     .catch(function (error) {
       console.log(error);
     });
-
 }
 
 var charityNavFunc = function (category_var) {
@@ -52,55 +51,55 @@ var charityNavFunc = function (category_var) {
 
       console.log(charities);
 
+      // Render returned charities to HTML 
       for (var i = 0; i < charities.length; i++) {
 
-        var charityList = document.getElementById("charities");
+      var charityList = document.getElementById("charities");
 
-        var charityDiv = document.createElement("div"); 
-        charityDiv.setAttribute("class", "charity");
+      var charityDiv = document.createElement("div"); 
+      charityDiv.setAttribute("class", "charity");
 
-        var nameDiv = document.createElement("div"); 
-        nameDiv.setAttribute("class", "name");
+      var nameDiv = document.createElement("div"); 
+      nameDiv.setAttribute("class", "name");
 
-        var missionDiv = document.createElement("div"); 
-        missionDiv.setAttribute("class", "mission");
+      var missionDiv = document.createElement("div"); 
+      missionDiv.setAttribute("class", "mission");
 
-        var buttonDiv = document.createElement("div"); 
-        buttonDiv.setAttribute("class", "button");
+      var buttonDiv = document.createElement("div"); 
+      buttonDiv.setAttribute("class", "button");
 
-        // we will display name, mission, button (with URL)
-        var charityName = document.createTextNode(charities[i].name);
+      // we will display name, mission, button (with URL)
+      var charityName = document.createTextNode(charities[i].name);
 
-        var charityMission = document.createTextNode(charities[i].mission);
+      var charityMission = document.createTextNode(charities[i].mission);
         
-        //store url link that goes inside the button
-        var link = charities[i].URL
-        console.log(link)
+      //store url link that goes inside the button
+      var link = charities[i].URL;
+      console.log(link);
 
+      //  Create the button
+      var charityButton = document.createElement("button");
+      charityButton.innerHTML = "Donate To This Charity";
 
-        // 1. Create the button
-       var charityButton = document.createElement("button");
-       charityButton.innerHTML = "Donate To This Charity";
+      buttonDiv.appendChild(charityButton);
 
-        // 2. Append somewhere
-        buttonDiv.appendChild(charityButton);
+      // Add event handler, closure
+      charityButton.addEventListener ("click", function(i) {
+        return function () {
+          var x = window.open(`${charities[i].URL}`, "_blank");
+        };
+      }(i));  
 
-        // 3. Add event handler
-        charityButton.addEventListener ("click", function() {
-        var x = window.open(`${link}`, "_blank");
-        });
+      nameDiv.appendChild(charityName);
+      missionDiv.appendChild(charityMission);
+      charityDiv.appendChild(nameDiv);
+      charityDiv.appendChild(missionDiv);
+      charityDiv.appendChild(buttonDiv);
+      charityList.appendChild(charityDiv);     
+    }
 
-        nameDiv.appendChild(charityName);
-        missionDiv.appendChild(charityMission);
-        charityDiv.appendChild(nameDiv);
-        charityDiv.appendChild(missionDiv);
-        charityDiv.appendChild(buttonDiv);
-        charityList.appendChild(charityDiv);
-       
-      }
-
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
