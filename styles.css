@@ -10,11 +10,13 @@ body {
 
 #logo,
 h1 {
+  text-align: center;
   display: inline-flex;
   width: 500px;
   
 }
 #logo{
+  text-align: center;
   background-color:black;
   color:whitesmoke
 }
@@ -27,7 +29,15 @@ img {
 div {
   justify-content: center;
 }
-
+.name{
+  margin-left:10px;
+  font-weight: bold;
+  font-size: 2em;
+}
+.mission{
+  font-size:1.3em;
+  padding: 10px;
+}
 /* main div that holds name, mission and button divs */
 .charity {
   padding: 10px;
@@ -36,13 +46,19 @@ div {
 
 /* button element */
 button{
+  margin-left:10px;
   background-color: black;
   color:whitesmoke;
   font-weight: bold;
   border-radius: 20px;
   padding: 8px;
+  
 }
 
+button:hover {
+ /* box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);*/
+  background-color: #4CBCC1;
+}
 
 /* TO DO: include a hover on the button -> a hand hover */
 /* TO DO: Include a footer at the button with the color of our logo that is position: fixed to the popup bottom */
