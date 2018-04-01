@@ -10,10 +10,18 @@ body {
 
 #logo,
 h1 {
-  text-align: center;
+  /*text-align: center;*/
+  /*margin-left: 30px;*/
   display: inline-flex;
   width: 500px;
   
+}
+
+h1{
+  margin-right:51px;
+  /*text-align: center*/;
+
+  justify-content: center;
 }
 #logo{
   text-align: center;
