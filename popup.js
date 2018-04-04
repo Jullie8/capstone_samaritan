@@ -43,12 +43,29 @@ var charityNavFunc = function (category_var) {
     .then(function (response) {
       //console.log(response.data);
 
+      //if no charities returned, go to default list
+
       let charities = [];
 
       for (let i = 0; i < 5; i++) {
+        //split into words and do word count; check if asks with <
+        let length = 24;
+        let missionArr = (response.data[i].mission).split(" ");
+        let missionShort = "";
+
+        for(let i=0; i < length; i++){
+          missionShort+= " " + (missionArr[i]);
+        }
+        missionShort += "..."
+
+        // Fix for "Dr."  "Mr." "Inc." 
+        //escape <>
+
+        console.log("missionShort: " + missionShort);
+
         charities.push({
           name: response.data[i].charityName,
-          mission: response.data[i].mission,
+          mission: missionShort,
           category: response.data[i].category.categoryName,
           cause: response.data[i].cause.causeName,
           URL: response.data[i].organization.charityNavigatorURL,
@@ -57,6 +74,9 @@ var charityNavFunc = function (category_var) {
       }
 
       console.log(charities);
+
+      var loader = document.getElementById("loader");
+      loader.parentNode.removeChild(loader);
 
       // Render returned charities to HTML 
       for (var i = 0; i < charities.length; i++) {
@@ -75,9 +95,8 @@ var charityNavFunc = function (category_var) {
         var buttonDiv = document.createElement("div"); 
         buttonDiv.setAttribute("class", "button");
 
-        // we will display name, mission, button (with URL)
+        //display name, mission, button (with URL)
         var charityName = document.createTextNode(charities[i].name);
-
         var charityMission = document.createTextNode(charities[i].mission);
           
         //store url link that goes inside the button
@@ -93,6 +112,8 @@ var charityNavFunc = function (category_var) {
         // Add event handler, closure
         charityButton.addEventListener ("click", function(i) {
           return function () {
+            // API call to database with user_id and charity info
+          
             var x = window.open(`${charities[i].URL}`, "_blank");
           };
         }(i));  
@@ -102,11 +123,17 @@ var charityNavFunc = function (category_var) {
         charityDiv.appendChild(nameDiv);
         charityDiv.appendChild(missionDiv);
         charityDiv.appendChild(buttonDiv);
-        charityList.appendChild(charityDiv);     
+        charityList.appendChild(charityDiv); 
+        var hr = document.createElement('hr');
+        charityList.appendChild(hr);    
       }
     })
 
   .catch(function (error) {
     console.log(error);
+
+
+
+
   });
 }
