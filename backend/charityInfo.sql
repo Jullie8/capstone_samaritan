@@ -25,3 +25,4 @@ CREATE TABlE user_history (
 );
 
 -- psql -f charityInfo.sql
+-- run in the backend folder

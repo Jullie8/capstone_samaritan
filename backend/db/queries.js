@@ -4,7 +4,7 @@ var db = pgp(connectionString);
 
 function addCharityLike(req, res, next) {
 
-    db.any('INSERT INTO user_history (USERID, create_time, charityName, WEBURL)' +
+    db.any('INSERT INTO user_history (USERID, create_time, charity_name, WebURL)' +
            'VALUES ( ${user_id}, now(), ${charityName}, ${URL} )', {
       user_id: req.body.user_id,
       charityName: req.body.charityName,
