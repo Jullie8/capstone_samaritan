@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
   
-    "name": "Getting started with chrome ext to activate on nytimes",
-    "description": "This extension allows the user to change the background color of the current page.",
+    "name": "Samaritan",
+    "description": "Curates charity recommendations based on news you read",
     "version": "1.1",
 
     "content_scripts": [
