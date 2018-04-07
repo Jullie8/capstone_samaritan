@@ -3,7 +3,7 @@ body {
   /* height: 489px; */
   width: 480px;
   margin: 0px !important;
-  border: 2px solid #757575
+  border: 2px solid #757575;
 }
 
 /* div where logo img and content are held */
@@ -22,6 +22,9 @@ h1{
   /*text-align: center*/;
 
   justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 #logo{
   text-align: center;
@@ -30,7 +33,9 @@ h1{
 }
 
 img {
-  height: 50px
+  height: 50px;
+  padding-left:7px;
+  padding-top: 5px;
 }
 
 /* all divs */
@@ -45,6 +50,7 @@ div {
 .mission{
   font-size:1.3em;
   padding: 10px;
+  line-height: 1.25;
 }
 /* main div that holds name, mission and button divs */
 .charity {
@@ -56,10 +62,12 @@ div {
 button{
   margin-left:10px;
   background-color: black;
+  font-size: 14px;
   color:whitesmoke;
   font-weight: bold;
   border-radius: 20px;
   padding: 8px;
+
   
 }
 
