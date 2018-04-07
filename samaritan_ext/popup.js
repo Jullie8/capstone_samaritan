@@ -134,7 +134,7 @@ function renderCharities(charities){
 
     //display name, mission, button (with URL)
     var charityName = document.createTextNode(charities[i].name);
-    var charityMission = document.createTextNode(charities[i].mission);
+    var charityMission = charities[i].mission;
       
     //store url link that goes inside the button
     var link = charities[i].URL;
@@ -161,7 +161,7 @@ function renderCharities(charities){
     }(i));  
 
     nameDiv.appendChild(charityName);
-    missionDiv.appendChild(charityMission);
+    missionDiv.innerHTML = charityMission;
     charityDiv.appendChild(nameDiv);
     charityDiv.appendChild(missionDiv);
     charityDiv.appendChild(buttonDiv);
