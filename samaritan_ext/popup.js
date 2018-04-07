@@ -115,7 +115,7 @@ var charityNavFunc = function (category_var) {
             console.log("user id in popup : " + userid)
             storeCharity(userid, charities[i].name, charities[i].URL);
             })
-            //var x = window.open(`${charities[i].URL}`, "_blank");
+            var x = window.open(`${charities[i].URL}`, "_blank");
           };
         }(i));  
 
