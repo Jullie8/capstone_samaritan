@@ -15,7 +15,8 @@ CREATE TABLE charities (
 
 CREATE TABLE users (
     ID SERIAL PRIMARY KEY,
-    USERID VARCHAR
+    USERID VARCHAR,
+        UNIQUE(USERID)
 );
 
 CREATE TABlE user_history (
