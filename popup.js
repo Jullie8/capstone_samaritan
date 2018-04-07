@@ -54,9 +54,12 @@ var charityNavFunc = function (category_var) {
         let missionShort = "";
 
         for(let i=0; i < length; i++){
-          missionShort+= " " + (missionArr[i]);
+            missionShort += " " + (missionArr[i]);
         }
-        missionShort += "..."
+        
+        missionShort += "...";
+
+        
 
         // Fix for "Dr."  "Mr." "Inc." 
         //escape <>
@@ -97,7 +100,7 @@ var charityNavFunc = function (category_var) {
 
         //display name, mission, button (with URL)
         var charityName = document.createTextNode(charities[i].name);
-        var charityMission = document.createTextNode(charities[i].mission);
+        var charityMission = charities[i].mission;
           
         //store url link that goes inside the button
         var link = charities[i].URL;
@@ -118,8 +121,9 @@ var charityNavFunc = function (category_var) {
           };
         }(i));  
 
+
         nameDiv.appendChild(charityName);
-        missionDiv.appendChild(charityMission);
+        missionDiv.innerHTML= charityMission;
         charityDiv.appendChild(nameDiv);
         charityDiv.appendChild(missionDiv);
         charityDiv.appendChild(buttonDiv);
@@ -132,6 +136,12 @@ var charityNavFunc = function (category_var) {
   .catch(function (error) {
     console.log(error);
 
+    //create separate function to check if the return value is empty
+    var noData = function (r) {
+      if (response.data.length === null) {
+        console.log('there is no data');
+    }
+  };
 
 
 
