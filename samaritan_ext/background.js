@@ -8,7 +8,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             break;
         }
     }
-
 });
 
 function getRandomToken() {
