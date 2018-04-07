@@ -19,7 +19,7 @@ function addCharityLike(req, res, next) {
 
 function addNewUser(req, res, next) {
 
-    db.any('INSERT INTO users (ID) VALUES (${user_id})', {user_id: req.params.user_id})
+    db.any('INSERT INTO users (USERID) VALUES (${user_id})', {user_id: req.params.user_id})
     .then(data => {
       res.status(200)
          .json(data);

@@ -26,14 +26,14 @@
     },
   
 
-
     "permissions": [
       "tabs",
       "activeTab",
       "storage",
       "https://api.data.charitynavigator.org/",
       "https://unpkg.com/axios/dist/axios.min.js/",
-      "https://gateway.watsonplatform.net/"
+      "https://gateway.watsonplatform.net/",
+      "http://localhost/*"
 
     ]
   }

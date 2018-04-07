@@ -14,13 +14,14 @@ CREATE TABLE charities (
 );
 
 CREATE TABLE users (
-    ID SERIAL PRIMARY KEY
+    ID SERIAL PRIMARY KEY,
+    USERID VARCHAR
 );
 
 CREATE TABlE user_history (
     WebURL VARCHAR,
     charity_name VARCHAR,
-    USERID INTEGER,
+    USERID VARCHAR,
     Create_Time TIMESTAMP
 );
 
