@@ -47,7 +47,7 @@ var charityNavFunc = function (category_var) {
 
       let charities = [];
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 3; i++) {
         //split into words and do word count; check if asks with <
         let length = 24;
         let missionArr = (response.data[i].mission).split(" ");
