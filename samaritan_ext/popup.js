@@ -12,7 +12,7 @@ chrome.tabs.query({
 })
 
 var watsonCallFunc = function (url_var) {
-
+  console.log(url_var)
   axios.get(`https://watson-api-explorer.mybluemix.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&url=${url_var}&features=concepts%2Ckeywords%2Ccategories&return_analyzed_text=false&clean=true&fallback_to_raw=true&concepts.limit=8&emotion.document=true&entities.limit=50&entities.mentions=false&entities.emotion=false&entities.sentiment=false&keywords.limit=50&keywords.emotion=false&keywords.sentiment=false&relations.model=en-news&semantic_roles.limit=50&semantic_roles.entities=false&semantic_roles.keywords=false&sentiment.document=true`)
     .then(function (response) {
       console.log(response);
@@ -43,8 +43,6 @@ var charityNavFunc = function (category_var) {
     .then(function (response) {
       //console.log(response.data);
 
-      //if no charities returned, go to default list
-
       let charities = [];
 
       for (let i = 0; i < 5; i++) {
@@ -60,8 +58,6 @@ var charityNavFunc = function (category_var) {
 
         // Fix for "Dr."  "Mr." "Inc." 
         //escape <>
-
-        console.log("missionShort: " + missionShort);
 
         charities.push({
           name: response.data[i].charityName,
@@ -113,8 +109,13 @@ var charityNavFunc = function (category_var) {
         charityButton.addEventListener ("click", function(i) {
           return function () {
             // API call to database with user_id and charity info
-          
-            var x = window.open(`${charities[i].URL}`, "_blank");
+            console.log("Button clicked! " + charities[i].name + " " + charities[i].URL);
+            chrome.storage.sync.get('userid', function (items) {
+            var userid = items.userid;
+            console.log("user id in popup : " + userid)
+            storeCharity(userid, charities[i].name, charities[i].URL);
+            })
+            //var x = window.open(`${charities[i].URL}`, "_blank");
           };
         }(i));  
 
@@ -132,8 +133,21 @@ var charityNavFunc = function (category_var) {
   .catch(function (error) {
     console.log(error);
 
-
-
-
   });
+}
+
+function storeCharity(userId, charityName, charityUrl) {
+
+  axios.post(`http://localhost:3000/users/${userId}/charities`, {
+    URL: charityUrl,
+    charityName: charityName,
+    user_id: userId
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
 }
