@@ -41,6 +41,17 @@ chrome.storage.sync.get('userid', function (items) {
     function useToken(userid) {
         // TODO: Use user id for authentication or whatever you want.
         console.log("token " + userid)
+
+        axios.post(`http://localhost:3000/users/${userid}`)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
     }
 });
+
+
 
