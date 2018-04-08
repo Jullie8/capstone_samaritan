@@ -39,5 +39,5 @@ Refine category matching (Eg. location, preferred charities)
 Introduce a simplified payment method 
 Offer other calls for action: volunteer, vote, contact representatives etc.
 
-![Screenshot](Samaritan_shirt.png) 
+![Screenshot](Samaritan_icon-02.png) 
 
