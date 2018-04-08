@@ -1,5 +1,5 @@
-#Welcome to Samaritan!
-#### * "Empowering users to make a difference with every article they read"*
+#  Welcome to Samaritan! 
+#### * Empowering users to make a difference with every article they read *
 
 ##  SAMARITAN
 Samaritan is a Chrome extension, that curates a list of charities when a user is reading news online, based on the news content. 
@@ -35,9 +35,9 @@ Implementing these concepts was also new and we learned that chrome extensions h
 
 ## Future Implementations
 
-Refine category matching (Eg. location, preferred charities)
-Introduce a simplified payment method 
-Offer other calls for action: volunteer, vote, contact representatives etc.
+* Refine category matching (Eg. location, preferred charities)
+* Introduce a simplified payment method 
+* Offer other calls for action: volunteer, vote, contact representatives etc.
 
 ![Screenshot](Samaritan_shirt.png) 
 
