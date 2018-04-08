@@ -71,6 +71,14 @@ button{
   
 }
 
+#noData{
+  font-size: 15px;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+  border-color: black;
+}
+
 button:hover {
  /* box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);*/
   background-color: #4CBCC1;

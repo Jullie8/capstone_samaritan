@@ -173,6 +173,9 @@ function renderCharities(charities){
 
 function defaultCharities() {
   console.log('No charities were returned');
+  var noData = document.getElementById('noData');
+  noData.innerHTML = ('Sorry, we could not find any matching charities, but check out the following organizations:'); 
+  
         defaultCharities = [];
         defaultCharities.push({
           name: "World Wildlife Fund",
