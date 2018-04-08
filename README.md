@@ -4,3 +4,7 @@ Welcome to Samaritan!
 
 ![Screenshot](Samaritan_shirt.png) 
 
+
+
+
+interesting bits of code 
