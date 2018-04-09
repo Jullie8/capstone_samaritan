@@ -39,5 +39,5 @@ Implementing these concepts was also new and we learned that chrome extensions h
 * Introduce a simplified payment method 
 * Offer other calls for action: volunteer, vote, contact representatives etc.
 
-![Screenshot](Samaritan_shirt.png) 
+![Screenshot](Samaritan_icon-02.png) 
 
