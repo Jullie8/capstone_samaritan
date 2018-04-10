@@ -22,6 +22,15 @@ var watsonCallFunc = function (url_var) {
       console.log(labelArr);
       console.log(category);
 
+      let causeID = '';
+
+      if(labelArr[2]==="ecology"){
+        //set causeId to 11
+        //https://api.data.charitynavigator.org/v2/Organizations?app_id=3ce3c3e0&app_key=b1f41b84a8462d99df8e61b03802e665&search=recycling&causeID=11&minRating=3&sort=RELEVANCE%3ADESC
+        console.log("set cause id");
+        causeID = "11"
+      }
+
       let concept = response.data.concepts[0].text;
       console.log("concept: " + concept);
       let keywords = [];
@@ -29,16 +38,24 @@ var watsonCallFunc = function (url_var) {
       keywords.push(response.data.keywords[1].text);
       console.log("keywords " + keywords);
 
-      charityNavFunc(category);
+      charityNavFunc(category, causeID);
+
+
     })
     .catch(function (error) {
       console.log(error);
     });
 }
 
-var charityNavFunc = function (category_var) {
+var charityNavFunc = function (category_var, causeID) {
 
-  axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=4&sort=RELEVANCE%3ADESC`)
+  let url = `https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=4&sort=RELEVANCE%3ADESC`
+
+  if(causeID !== ''){
+    url+=`&causeID=${causeID}`;
+  }
+
+  axios.get(url)
     .then(function (response) {
       console.log(response.data);
       console.log("arr length " + response.data.length);
