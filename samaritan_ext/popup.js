@@ -16,7 +16,6 @@ var watsonCallFunc = function (url_var) {
   axios.get(`https://watson-api-explorer.mybluemix.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&url=${url_var}&features=concepts%2Ckeywords%2Ccategories&return_analyzed_text=false&clean=true&fallback_to_raw=true&concepts.limit=8&emotion.document=true&entities.limit=50&entities.mentions=false&entities.emotion=false&entities.sentiment=false&keywords.limit=50&keywords.emotion=false&keywords.sentiment=false&relations.model=en-news&semantic_roles.limit=50&semantic_roles.entities=false&semantic_roles.keywords=false&sentiment.document=true`)
     .then(function (response) {
       console.log(response);
-      //console.log(response.data.categories[0].label);
       let labelStr = response.data.categories[0].label;
       let labelArr = labelStr.split("/");
       let category = labelArr.slice(-1)[0];
@@ -56,7 +55,7 @@ var charityNavFunc = function (category_var) {
           totalCharities = response.data.length;
       }
       for (let i = 0; i < totalCharities; i++) {
-        //split into words and do word count; check if asks with <
+        //split into words and do word count
         let length = 24;
         let missionArr = (response.data[i].mission).split(" ");
         let missionShort = "";
@@ -65,9 +64,6 @@ var charityNavFunc = function (category_var) {
           missionShort+= " " + (missionArr[i]);
         }
         missionShort += "..."
-
-        // Fix for "Dr."  "Mr." "Inc." 
-        //escape <>
 
         charities.push({
           name: response.data[i].charityName,
@@ -78,7 +74,6 @@ var charityNavFunc = function (category_var) {
           rating: response.data[i].currentRating.rating
         });
       }
-
       console.log("charities" + charities);      
       // call render html func 
       renderCharities(charities);
@@ -173,6 +168,9 @@ function renderCharities(charities){
 
 function defaultCharities() {
   console.log('No charities were returned');
+  var noData = document.getElementById('noData');
+  noData.innerHTML = ('Sorry, we could not find any matching charities, but check out the following organizations:'); 
+  
         defaultCharities = [];
         defaultCharities.push({
           name: "World Wildlife Fund",
