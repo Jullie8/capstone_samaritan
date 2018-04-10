@@ -38,7 +38,7 @@ var watsonCallFunc = function (url_var) {
 
 var charityNavFunc = function (category_var) {
 
-  axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=4&sort=RELEVANCE%3ADESC`)
+  axios.get(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CLIENT_ID}&app_key=${CLIENT_SECRET}&search=${category_var}&minRating=3&&scopeOfWork=INTERNATIONAL&sort=RELEVANCE%3ADESC`)
     .then(function (response) {
       console.log(response.data);
       console.log("arr length " + response.data.length);
