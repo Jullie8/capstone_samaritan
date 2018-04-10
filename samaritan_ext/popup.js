@@ -49,7 +49,7 @@ var charityNavFunc = function (category_var) {
       }
       else {
 
-      let totalCharities = 5; //number of total charities dispalyed in pop up
+      let totalCharities = 3; //number of total charities dispalyed in pop up
 
         if(response.data.length < totalCharities){
           totalCharities = response.data.length;
